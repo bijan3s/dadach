@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block contents%}
+
+{% if user.is_authenticated %}
+<h1>{{exercise.name}}</h1>
+<img src="{{exercise.image.url}}" >
+<p>{{exercise.description}}</p>
+
+{% else %}
+<p>You are not logged in.</p>
+<a href="{% url 'login' %}">Log In</a>
+{% endif %}
+
+
+{%endblock%}

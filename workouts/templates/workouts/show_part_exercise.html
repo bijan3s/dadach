@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% block contents%}
+<ul>
+    {% for exercise in all_exercises%}
+    {% if exercise.part.name == part%}
+    <li>
+    <a href="{%url 'show_exercise' exercise.part.name exercise.id%}">{{exercise.name}}</a>
+    </li>
+    {%endif %}
+    {%endfor%}
+</ul>
+{%endblock%}

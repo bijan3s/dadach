@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block contents%}
+<ul>
+{% for part in parts%}
+<li>
+<a href="{%url 'show_part' part.name%}">{{part.name}}</a>
+</li>
+{%endfor%}
+</ul>
+{%endblock%}
